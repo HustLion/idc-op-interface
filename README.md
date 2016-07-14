@@ -4,6 +4,13 @@
 This is the front end and should be used with config files.
 
 
+# Features
+
+- FTP file upload/download with a modern interface
+- Server interaction
+- Machine learning result visualization
+- Jupyter notebook viewer
+- Git GUI client with material design
 
 
 # Libraries/Frameworks/Components
@@ -12,6 +19,9 @@ This is the front end and should be used with config files.
 - [Photon](http://photonkit.com/)
 - [D3.js]()
 - [Abricotine](http://abricotine.brrd.fr/)
+- [Node-ftp](https://github.com/mscdex/node-ftp)
+- [Git Watcher](https://github.com/demian85/git-watcher): re-writen with
+  Electron.
 
 # Usage
 
