@@ -1,5 +1,6 @@
 var fs = require("fs");
 var readline = require("readline");
+var path = require('path');
 
 function validateResult(resultLine) {
     // the first attribute is the true category, the second attribute is the identified category, if they match, the result is correct.
@@ -9,7 +10,7 @@ function validateResult(resultLine) {
 
 }
 
-function d3Visualize(resultFileName) {
+function d3Visualize() {
     // get dialog
     const ipc = require('electron').ipcRenderer
 
@@ -19,12 +20,15 @@ function d3Visualize(resultFileName) {
       ipc.send('open-file-dialog')
     })
 
-    ipc.on('selected-directory', function (event, path) {
-      document.getElementById('selected-file').innerHTML = `You selected: ${path}`
-    })
+    ipc.on('selected-directory', function (event, filepath) {
+      // document.getElementById('selected-file').innerHTML = `You selected: ${path}`
+      document.getElementById('selected-file').innerHTML = `You selected: ${filepath}`
     // 创建可读流,设置编码为 utf8。
+    console.log(filepath);
+    resultFileName = path.join(filepath[0], 'result-noise.txt');
+    console.log(resultFileName);
     var rl = readline.createInterface({
-      input: fs.createReadStream(resultFileName).setEncoding('UTF8')
+      input: fs.createReadStream(resultFileName)
     });
 
     var correct = 0;
@@ -32,10 +36,22 @@ function d3Visualize(resultFileName) {
 
     rl.on('line', (line) => {
         console.log('Line from file:', line);
-        validateResult(line);
+        if (validateResult(line)) {
+            correct++;
+        } else {
+            incorrect++;
+        }
     });
 
-    console.log("程序执行完毕");
+    rl.on('close', () => {
+
+    console.log("correct:", correct, "\tincorrect:", incorrect);
+
+    console.log("Success rate: ", correct/(correct + incorrect));
+    });
+
+
+    })
 
 }
 
