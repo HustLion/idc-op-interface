@@ -41,4 +41,8 @@ This is the front end and should be used with config files.
 
 2. Grunt
 
+# Notes
+
+- Nice Electron tutorial: [Building a desktop application with
+  Electron](https://medium.com/developers-writing/building-a-desktop-application-with-electron-204203eeb658#.zgb8o8imm)
 
