@@ -20,8 +20,11 @@ This is the front end and should be used with config files.
 - [D3.js]()
 - [Abricotine](http://abricotine.brrd.fr/)
 - [Node-ftp](https://github.com/mscdex/node-ftp)
-- [Git Watcher](https://github.com/demian85/git-watcher): re-writen with
-  Electron.
+- [Git Watcher](https://github.com/demian85/git-watcher): re-writen with Electron.
+- [Angular.js]()
+- [jQuery]()
+- [jQuery UI]()
+- [SASS]()
 
 # Usage
 
@@ -42,11 +45,16 @@ This is the front end and should be used with config files.
 2. Grunt
 
 3. CNPM
+
    If you are in China, try:
 
     $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
    And use `cnpm` to replace `npm` whenever you encounter a install command with `npm` in it. This will speed up the installation.
+
+# Known bugs
+
+- When resized unproportionally, there can be an abnormal space between panes.
 
 # Notes
 
