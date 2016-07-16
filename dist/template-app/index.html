@@ -1,112 +1,195 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Photon</title>
     <meta charset="utf-8">
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/photon.css">
     <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../node_modules/jquery/jquery.min.js">
     <link rel="stylesheet" href="../css/stylesheet.css">
-    
     <!-- Javascript -->
     <script src="js/menu.js" charset="utf-8"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="window">
-
-      <!-- .toolbar-header sits at the top of your app -->
-      <header class="toolbar toolbar-header">
-        <h1 class="title">Photon</h1>
-      </header>
-
-      <!-- Your app's content goes inside .window-content -->
-      <div class="window-content">
-        <div class="pane-group">
-          <div class="pane pane-sm sidebar">
-            <nav class="nav-group">
-              <h5 class="nav-group-title">Favorites</h5>
-              <span class="nav-group-item">
-                <span class="icon icon-home"></span>
-                connors
-              </span>
-              <span class="nav-group-item active">
-                <span class="icon icon-light-up"></span>
-                Photon
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-download"></span>
-                Downloads
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-folder"></span>
-                Documents
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-window"></span>
-                Applications
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-signal"></span>
-                AirDrop
-              </span>
-              <span class="nav-group-item">
-                <span class="icon icon-monitor"></span>
-                Desktop
-              </span>
-            </nav>
-          </div>
-
-          <div class="pane">
-            <div class="container-fluid" style="height:100%">
-              <div class="row" style="height:50%;width:100%;border:1px solid #ddd;border-left:none;border-right:none;border-top:none;position:absolute">
-                <div class="operation-grid col-sm-offset-2 col-sm-8">
-                  <p>Markdown</p>
+        <!-- .toolbar-header sits at the top of your app -->
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Photon</h1>
+        </header>
+        <!-- Your app's content goes inside .window-content -->
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="pane pane-sm sidebar">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title">Favorites</h5>
+                        <span class="nav-group-item">
+                <span class="icon icon-home"></span> connors
+                        </span>
+                        <span class="nav-group-item active">
+                <span class="icon icon-light-up"></span> Photon
+                        </span>
+                        <span class="nav-group-item">
+                <span class="icon icon-download"></span> Downloads
+                        </span>
+                        <span class="nav-group-item">
+                <span class="icon icon-folder"></span> Documents
+                        </span>
+                        <span class="nav-group-item">
+                <span class="icon icon-window"></span> Applications
+                        </span>
+                        <span class="nav-group-item">
+                <span class="icon icon-signal"></span> AirDrop
+                        </span>
+                        <span class="nav-group-item">
+                <span class="icon icon-monitor"></span> Desktop
+                        </span>
+                    </nav>
                 </div>
-              </div>
-
-              <div class="row" style="height:50%;width:100%;bottom:0px;position:absolute">
-                <div class="operation-grid col-sm-offset-2 col-sm-8">
-                  <p>Wetty</p>
+                <div class="pane">
+                    <div class="container-fluid" style="height:100%">
+                        <div class="row" style="height:50%;width:100%;border:1px solid #ddd;border-left:none;border-right:none;border-top:none;position:absolute">
+                            <div class="operation-grid col-sm-offset-2 col-sm-8">
+                                <p>Markdown</p>
+                            </div>
+                        </div>
+                        <div class="row" style="height:50%;width:100%;bottom:0px;position:absolute">
+                            <div class="operation-grid col-sm-offset-2 col-sm-8">
+                                <p>Wetty</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="pane">
+                    <div class="container-fluid" style="height:100%">
+                        <div class="row">
+                            <div class="operation-grid col-sm-offset-2 col-sm-8">
+                                <p>选择需要分析的数据文件：</p>
+                                <button class="btn btn-primary" id="select-directory">选择文件</button>
+                                <p><span class="demo-response" id="selected-file"></span></p>
+                                <div id="result-graph"></div>
+                                <div id="result-graph-d3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-              
-          </div>
-          <div class="pane">
-            <div class="container-fluid" style="height:100%">
-              <div class="row">
-                <div class="operation-grid col-sm-offset-2 col-sm-8">
-                  <p>选择需要分析的数据文件：</p>
-                  <button class="btn btn-primary" id="select-directory">选择文件</button>
-                  <p><span class="demo-response" id="selected-file"></span></p>
-                  <div id="result-graph"></div>
-              
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-    <script type="text/javascript" src="../../node_modules/d3/build/d3.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/d3/d3.min.js"></script>
     <script src="js/visualize.js"></script>
     <script type="text/javascript">
-      var death_rate = [['越南',24.26],['阿魯巴',17.48],['關島',10.01],['澳門',5.84]];
-      var div_data_bind = d3.select("#result-graph").selectAll("div").data(death_rate);
-      div_set = div_data_bind.enter().append("div");
-      div_data_bind.exit().remove();
-      div_set.text(function(d,i) {
+    var death_rate = [
+        ['越南', 24.26],
+        ['阿魯巴', 17.48],
+        ['關島', 10.01],
+        ['澳門', 5.84]
+    ];
+    var div_data_bind = d3.select("#result-graph").selectAll("div").data(death_rate);
+    div_set = div_data_bind.enter().append("div");
+    div_data_bind.exit().remove();
+    div_set.text(function(d, i) {
         return i + " / " + d[0];
-      });
-      // style
-      div_set.style("height", "20px");
-      div_set.style("background", "red");
-      div_set.style("margin", "5px");
-      div_set.style("width", function(d,i) {
-        return (d[1] * 10)+"px";
-      });
+    });
+    // style
+    div_set.style("height", "20px");
+    div_set.style("background", "red");
+    div_set.style("margin", "5px");
+    div_set.style("width", function(d, i) {
+        return (d[1] * 10) + "px";
+    });
+
+    (function sunburstGraph() {
+        var width = 960,
+            height = 700,
+            radius = Math.min(width, height) / 2,
+            color = d3.scale.category20c();
+
+        var svg = d3.select("#result-graph-d3").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height * .52 + ")");
+
+        var partition = d3.layout.partition()
+            .sort(null)
+            .size([2 * Math.PI, radius * radius])
+            .value(function(d) {
+                return 1;
+            });
+
+        var arc = d3.svg.arc()
+            .startAngle(function(d) {
+                return d.x;
+            })
+            .endAngle(function(d) {
+                return d.x + d.dx;
+            })
+            .innerRadius(function(d) {
+                return Math.sqrt(d.y);
+            })
+            .outerRadius(function(d) {
+                return Math.sqrt(d.y + d.dy);
+            });
+
+        d3.json("./flare.json", function(error, root) {
+            if (error) throw error;
+
+            var path = svg.datum(root).selectAll("path")
+                .data(partition.nodes)
+                .enter().append("path")
+                .attr("display", function(d) {
+                    return d.depth ? null : "none";
+                }) // hide inner ring
+                .attr("d", arc)
+                .style("stroke", "#fff")
+                .style("fill", function(d) {
+                    return color((d.children ? d : d.parent).name);
+                })
+                .style("fill-rule", "evenodd")
+                .each(stash);
+
+            d3.selectAll("input").on("change", function change() {
+                var value = this.value === "count" ? function() {
+                    return 1;
+                } : function(d) {
+                    return d.size;
+                };
+
+                path
+                    .data(partition.value(value).nodes)
+                    .transition()
+                    .duration(1500)
+                    .attrTween("d", arcTween);
+            });
+        });
+
+        // Stash the old values for transition.
+        function stash(d) {
+            d.x0 = d.x;
+            d.dx0 = d.dx;
+        }
+
+        // Interpolate the arcs in data space.
+        function arcTween(a) {
+            var i = d3.interpolate({
+                x: a.x0,
+                dx: a.dx0
+            }, a);
+            return function(t) {
+                var b = i(t);
+                a.x0 = b.x;
+                a.dx0 = b.dx;
+                return arc(b);
+            };
+        }
+
+        d3.select(self.frameElement).style("height", height + "px");
+    })()
+
     </script>
-  </body>
+</body>
+
 </html>
