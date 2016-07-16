@@ -81,6 +81,7 @@
     <script type="text/javascript" src="../../node_modules/d3/d3.min.js"></script>
     <script src="js/visualize.js"></script>
     <script type="text/javascript">
+    var d3 = require('d3');
     var death_rate = [
         ['越南', 24.26],
         ['阿魯巴', 17.48],
@@ -134,7 +135,7 @@
                 return Math.sqrt(d.y + d.dy);
             });
 
-        d3.json("./flare.json", function(error, root) {
+        d3.json("flare.json", function(error, root) {
             if (error) throw error;
 
             var path = svg.datum(root).selectAll("path")
