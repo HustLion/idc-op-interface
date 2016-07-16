@@ -2,10 +2,14 @@
 <html>
   <head>
     <title>Photon</title>
+    <meta charset="utf-8">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/photon.css">
-
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../node_modules/jquery/jquery.min.js">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    
     <!-- Javascript -->
     <script src="js/menu.js" charset="utf-8"></script>
   </head>
@@ -55,9 +59,35 @@
           </div>
 
           <div class="pane">
-              Hello World.
-              <button id="select-directory">Choose File</button>
+            <div class="container-fluid" style="height:100%">
+              <div class="row" style="height:50%;border:1px solid #ddd;border-left:none;border-right:none;">
+                <div class="operation-grid col-sm-offset-2 col-sm-8">
+                  <p>选择需要分析的数据文件：</p>
+                  <button class="btn btn-primary" id="select-directory">选择文件</button>
               <span class="demo-response" id="selected-file"></span>
+                </div>
+              </div>
+
+              <div class="row" style="height:50%;bottom:0px">
+                <div class="operation-grid col-sm-offset-2 col-sm-8">
+                  <p>选择需要分析的数据文件：</p>
+                  <button class="btn btn-primary" id="select-directory">选择文件</button>
+              <span class="demo-response" id="selected-file"></span>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+          <div class="pane">
+            <div class="container-fluid" style="height:100%">
+              <div class="row">
+                <div class="operation-grid col-sm-offset-2 col-sm-8">
+                  <p>选择需要分析的数据文件：</p>
+                  <button class="btn btn-primary" id="select-directory">选择文件</button>
+              <span class="demo-response" id="selected-file"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

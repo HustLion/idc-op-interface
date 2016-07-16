@@ -41,6 +41,13 @@ This is the front end and should be used with config files.
 
 2. Grunt
 
+3. CNPM
+   If you are in China, try:
+
+    $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+   And use `cnpm` to replace `npm` whenever you encounter a install command with `npm` in it. This will speed up the installation.
+
 # Notes
 
 - Nice Electron tutorial: [Building a desktop application with
