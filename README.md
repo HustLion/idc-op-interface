@@ -1,4 +1,4 @@
-# idc-op-interface
+# idc-op-interface [![Travis Build Status](https://img.shields.io/travis/HustLion/idc-op-interface.svg?branch=master?style=plastic)](https://travis-ci.org/HustLion/idc-op-interface)
 2016-2018 IDC laboratory server related operation interface built with electron.js.
 
 This is the front end and should be used with config files.
@@ -35,6 +35,8 @@ This is the front end and should be used with config files.
 - [NPM]()
 - [Bower]()
 - [Grunt]()
+- [TravisCI]()
+- [Shields.io](https://img.shields.io)
 
 # Usage
 
