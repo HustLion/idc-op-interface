@@ -1,4 +1,4 @@
-# idc-op-interface [![Travis Build Status](https://img.shields.io/travis/HustLion/idc-op-interface.svg?branch=master?style=plastic)](https://travis-ci.org/HustLion/idc-op-interface)
+# idc-op-interface [![Build Status](https://img.shields.io/travis/HustLion/idc-op-interface.svg?branch=master?style=plastic)](https://travis-ci.org/HustLion/idc-op-interface) [![Coverage Status](https://img.shields.io/coveralls/HustLion/idc-op-interface/badge.svg?branch=master?style=plastic)](https://coveralls.io/github/HustLion/idc-op-interface?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 2016-2018 IDC laboratory server related operation interface built with electron.js.
 
 This is the front end and should be used with config files.
@@ -37,6 +37,7 @@ This is the front end and should be used with config files.
 - [Grunt]()
 - [TravisCI]()
 - [Shields.io](https://img.shields.io)
+- [Git Flow](https://github.com/nvie/gitflow)
 
 # Usage
 
@@ -72,4 +73,5 @@ This is the front end and should be used with config files.
 
 - Nice Electron tutorial: [Building a desktop application with Electron](https://medium.com/developers-writing/building-a-desktop-application-with-electron-204203eeb658#.zgb8o8imm)
 - [Testing on Headless CI Systems (Travis CI, Jenkins)](http://electron.atom.io/docs/tutorial/testing-on-headless-ci/)
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
