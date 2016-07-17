@@ -29,6 +29,7 @@ This is the front end and should be used with config files.
 - [QUnit]()
 - [PhantomJS](http://phantomjs.org/)
 - [Jest](https://facebook.github.io/jest)
+- [Jasmine 2](http://jasmine.github.io/2.0/introduction.html)
 
 # Management Tools
 
