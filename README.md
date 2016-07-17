@@ -27,6 +27,8 @@ This is the front end and should be used with config files.
 - [SASS]()
 - [React]()
 - [QUnit]()
+- [PhantomJS](http://phantomjs.org/)
+- [Jest](https://facebook.github.io/jest)
 
 # Management Tools
 
