@@ -30,6 +30,3 @@ install:
 
 matrix:
   fast_finish: true
-
-script:
-  - npm start
