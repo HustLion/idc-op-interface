@@ -25,6 +25,16 @@ This is the front end and should be used with config files.
 - [jQuery]()
 - [jQuery UI]()
 - [SASS]()
+- [React]()
+- [QUnit]()
+
+# Management Tools
+
+- [NVM]()
+- [RVM]()
+- [NPM]()
+- [Bower]()
+- [Grunt]()
 
 # Usage
 
@@ -35,8 +45,8 @@ This is the front end and should be used with config files.
 
 1. NVM
 
-     wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
-     nvm install node
+     $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+     $ nvm install node
 
 
    Note: if you get a "`nvm ls-remote` returns `N/A` error", try `export
@@ -58,6 +68,6 @@ This is the front end and should be used with config files.
 
 # Notes
 
-- Nice Electron tutorial: [Building a desktop application with
-  Electron](https://medium.com/developers-writing/building-a-desktop-application-with-electron-204203eeb658#.zgb8o8imm)
+- Nice Electron tutorial: [Building a desktop application with Electron](https://medium.com/developers-writing/building-a-desktop-application-with-electron-204203eeb658#.zgb8o8imm)
+- [Testing on Headless CI Systems (Travis CI, Jenkins)](http://electron.atom.io/docs/tutorial/testing-on-headless-ci/)
 

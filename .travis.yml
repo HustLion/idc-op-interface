@@ -12,14 +12,24 @@ env:
   matrix:
     - RUBY_VERSION=2.0
 
+addons:
+  apt:
+    packages:
+      - xvfb
+
 before_install:
   - rvm install $RUBY_VERSION
   - rvm use $RUBY_VERSION --fuzzy
   - export GEMDIR=$(rvm gemdir)
 
 install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - travis_retry npm install
   - travis_retry gem install --no-document "jekyll:~>3.0.0" "rouge:~>1.10" "sass:~>3.4"
 
 matrix:
   fast_finish: true
+
+script:
+  - npm start
