@@ -1,4 +1,4 @@
-# idc-op-interface [![Build Status](https://img.shields.io/travis/HustLion/idc-op-interface.svg?branch=master?style=plastic)](https://travis-ci.org/HustLion/idc-op-interface) [![Coverage Status](https://img.shields.io/coveralls/HustLion/idc-op-interface/badge.svg?branch=master?style=plastic)](https://coveralls.io/github/HustLion/idc-op-interface?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+# idc-op-interface [![Build Status](https://img.shields.io/travis/HustLion/idc-op-interface.svg?branch=master?style=plastic)](https://travis-ci.org/HustLion/idc-op-interface) [![Coverage Status](https://coveralls.io/repos/github/HustLion/idc-op-interface/badge.svg?branch=master)](https://coveralls.io/github/HustLion/idc-op-interface?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 2016-2018 IDC laboratory server related operation interface built with electron.js.
 
 This is the front end and should be used with config files.
