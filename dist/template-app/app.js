@@ -1,9 +1,16 @@
+'use strict';
+
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var globalShortcut = require('global-shortcut');
+var configuration = require('./js/configuration');
+var ipc = require('electron').ipcMain;
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
+var settingsWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
@@ -18,6 +25,11 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
   // Create the browser window.
+
+  if (!configuration.readSettings('shortcutKeys')) {
+        configuration.saveSettings('shortcutKeys', ['ctrl', 'shift']);
+  }
+
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -32,6 +44,9 @@ app.on('ready', function() {
 
   // Open the DevTools.
   //mainWindow.openDevTools();
+  //
+  
+  setGlobalShortcuts();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -42,8 +57,22 @@ app.on('ready', function() {
   });
 });
 
+function setGlobalShortcuts() {
+    globalShortcut.unregisterAll();
 
-const ipc = require('electron').ipcMain
+    var shortcutKeysSetting = configuration.readSettings('shortcutKeys');
+    var shortcutPrefix = shortcutKeysSetting.length === 0 ? '' : shortcutKeysSetting.join('+') + '+';
+
+    globalShortcut.register(shortcutPrefix + '1', function () {
+        mainWindow.webContents.send('global-shortcut', 0);
+    });
+    globalShortcut.register(shortcutPrefix + '2', function () {
+        mainWindow.webContents.send('global-shortcut', 1);
+    });
+}
+
+
+// const ipc = require('electron').ipcMain
 const dialog = require('electron').dialog
 
 ipc.on('open-file-dialog', function (event) {
@@ -53,3 +82,37 @@ ipc.on('open-file-dialog', function (event) {
     if (files) event.sender.send('selected-directory', files)
   })
 })
+
+
+ipc.on('close-main-window', function () {
+    app.quit();
+});
+
+ipc.on('open-settings-window', function () {
+    if (settingsWindow) {
+        return;
+    }
+
+    settingsWindow = new BrowserWindow({
+        frame: false,
+        height: 200,
+        resizable: false,
+        width: 200
+    });
+
+    settingsWindow.loadUrl('file://' + __dirname + './settings/settings.html');
+
+    settingsWindow.on('closed', function () {
+        settingsWindow = null;
+    });
+});
+
+ipc.on('close-settings-window', function () {
+    if (settingsWindow) {
+        settingsWindow.close();
+    }
+});
+
+ipc.on('set-global-shortcuts', function () {
+    setGlobalShortcuts();
+});
