@@ -1,0 +1,27 @@
+{
+  "name": "idc-op-interface",
+  "description": "2016-2018 IDC Laboratory Server Operation Interface Built with Electron.js",
+  "main": "dist/template-app/app.js",
+  "authors": [
+    "Hustlion"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "photon",
+    "html",
+    "css",
+    "electron"
+  ],
+  "homepage": "https://github.com/HustLion/idc-op-interface",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui-boostrap": "^1.0.0"
+  }
+}
