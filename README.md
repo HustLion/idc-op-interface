@@ -30,6 +30,9 @@ This is the front end and should be used with config files.
 - [PhantomJS](http://phantomjs.org/)
 - [Jest](https://facebook.github.io/jest)
 - [Jasmine 2](http://jasmine.github.io/2.0/introduction.html)
+- [Babel]()
+- [react-blessed](https://github.com/Yomguithereal/react-blessed): A react renderer for [blessed](https://github.com/chjj/blessed) (A high-level terminal interface library for node.js.).
+- [Bootstrap]()
 
 # Management Tools
 
