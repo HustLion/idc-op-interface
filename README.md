@@ -20,8 +20,8 @@ This is the front end and should be used with config files.
 - [D3.js]()
 - [Abricotine](http://abricotine.brrd.fr/)
 - [Node-ftp](https://github.com/mscdex/node-ftp)
-- [Git Watcher](https://github.com/demian85/git-watcher): re-writen with
-  Electron.
+- [Git Watcher](https://github.com/demian85/git-watcher): re-writen with Electron.
+- [Wetty](https://github.com/krishnasrinivas/wetty):Terminal in browser over http/https. (Ajaxterm/Anyterm alternative, but much better)
 
 # Usage
 
