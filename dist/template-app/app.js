@@ -101,7 +101,7 @@ ipc.on('open-settings-window', function () {
         width: 400
     });
 
-    settingsWindow.loadURL('file://' + __dirname + './settings/settings.html');
+    settingsWindow.loadURL('file://' + __dirname + '/settings/settings.html');
 
     settingsWindow.on('closed', function () {
         settingsWindow = null;
