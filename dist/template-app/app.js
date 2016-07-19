@@ -3,7 +3,7 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
 var globalShortcut = require('global-shortcut');
-var configuration = require('./js/configuration');
+var configuration = require('./configuration');
 var ipc = require('electron').ipcMain;
 
 
@@ -31,6 +31,7 @@ app.on('ready', function() {
   }
 
   mainWindow = new BrowserWindow({
+    frame: false,
     width: 800,
     height: 600,
     'min-width': 500,
@@ -95,12 +96,12 @@ ipc.on('open-settings-window', function () {
 
     settingsWindow = new BrowserWindow({
         frame: false,
-        height: 200,
-        resizable: false,
-        width: 200
+        height: 400,
+        resizable: true,
+        width: 400
     });
 
-    settingsWindow.loadUrl('file://' + __dirname + './settings/settings.html');
+    settingsWindow.loadURL('file://' + __dirname + './settings/settings.html');
 
     settingsWindow.on('closed', function () {
         settingsWindow = null;
