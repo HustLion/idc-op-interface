@@ -35,3 +35,4 @@ script:
 - |
     npm test
     cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    ./node_modules/.bin/electron-packager ./dist/template-app IDC-OP-INTERFACE --all --out ./ --version 0.36.0 --overwrite --icon=./dist/template-app/img/app-icon/app-icon.icns

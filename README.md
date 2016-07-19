@@ -81,6 +81,14 @@ This is the front end and should be used with config files.
 # Visual Assets
 
 - [iConvert Icons](https://iconverticons.com/online/)
+- [Inkscape](https://inkscape.org/en/)
+
+# Utilities
+
+Docs:
+
+- [Everpad](https://github.com/nvbn/everpad): Dev Record.
+- [Readme.io](https://readme.io/): Beautiful and useful documentation tool.
 
 # Known bugs
 

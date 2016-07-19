@@ -21,7 +21,7 @@
     "start": "electron dist/template-app",
     "build": "grunt",
     "test": "jest --coverage",
-    "package": "electron-packager ./dist/template-app IDC-OP-INTERFACE --all --out ~/Desktop/SoundMachine --version 0.36.0 --overwrite --icon=./dist/template-app/img/app-icon/app-icon.icns"
+    "package": "electron-packager ./dist/template-app IDC-OP-INTERFACE --all --out ~/Desktop/idc-op-interface --version 0.36.0 --overwrite --icon=./dist/template-app/img/app-icon/app-icon.icns"
   },
   "license": "MIT",
   "devDependencies": {
