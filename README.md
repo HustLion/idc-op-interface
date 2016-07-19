@@ -72,6 +72,16 @@ This is the front end and should be used with config files.
 
    And use `cnpm` to replace `npm` whenever you encounter a install command with `npm` in it. This will speed up the installation.
 
+
+# Packaging
+
+    $ npm run-script package
+
+
+# Visual Assets
+
+- [iConvert Icons](https://iconverticons.com/online/)
+
 # Known bugs
 
 - When resized unproportionally, there can be an abnormal space between panes.
