@@ -100,3 +100,4 @@ Docs:
 - [Testing on Headless CI Systems (Travis CI, Jenkins)](http://electron.atom.io/docs/tutorial/testing-on-headless-ci/)
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
+<script type='text/javascript' src='https://www.openhub.net/p/gnome-terminal-colors-solarized/widgets/project_basic_stats?format=js'></script>
